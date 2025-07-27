@@ -25,4 +25,19 @@ export class PlaylistListComponent implements OnInit {
       }
     });
   }
+
+  eliminar(nombre: string) {
+  if (confirm(`¿Estás seguro de que deseas eliminar la playlist "${nombre}"?`)) {
+    this.playlistService.eliminarPorNombre(nombre).subscribe({
+      next: () => {
+        this.playlists = this.playlists.filter(p => p.nombre !== nombre);
+        alert(`Playlist "${nombre}" eliminada.`);
+      },
+      error: (err) => {
+        console.error('Error al eliminar', err);
+        alert('Ocurrió un error al eliminar la playlist.');
+      }
+    });
+  }
+}
 }

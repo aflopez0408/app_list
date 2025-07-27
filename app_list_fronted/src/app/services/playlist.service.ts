@@ -37,6 +37,10 @@ export class PlaylistService {
   return this.http.get<PlaylistDTO>(`${this.apiUrl}/${nombre}`);
   }
 
+  eliminarPorNombre(nombre: string): Observable<void> {
+  return this.http.delete<void>(`${this.apiUrl}/${nombre}`);
+  }
+
 }
 
 

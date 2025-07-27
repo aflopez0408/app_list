@@ -34,4 +34,24 @@ export class PlaylistSearchComponent {
       }
     });
   }
+
+  eliminar() {
+  if (!this.resultado) return;
+
+  const nombre = this.resultado.nombre;
+  if (confirm(`¿Eliminar la playlist "${nombre}"?`)) {
+    this.playlistService.eliminarPorNombre(nombre).subscribe({
+      next: () => {
+        alert(`Playlist "${nombre}" eliminada.`);
+        this.resultado = null;
+        this.nombre = '';
+        this.error = null;
+      },
+      error: () => {
+        alert('Error al eliminar la playlist.');
+      }
+    });
+  }
+}
+
 }
