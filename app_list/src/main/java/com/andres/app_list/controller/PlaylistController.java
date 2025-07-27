@@ -41,7 +41,7 @@ public class PlaylistController {
         return ResponseEntity.ok(dto);
     }
 
-    
+
     @DeleteMapping("/{nombre}")
     public ResponseEntity<Void> deletePlaylist(@PathVariable String nombre) {
         playlistService.delete(nombre);
