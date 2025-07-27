@@ -1,0 +1,84 @@
+.playlist-form {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+}
+
+.form-section {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-section label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-section input {
+  padding: 8px;
+  font-size: 14px;
+}
+
+h3 {
+  margin-top: 30px;
+  font-size: 20px;
+  color: #333;
+}
+
+.cancion-row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.cancion-row input {
+  padding: 6px;
+  font-size: 13px;
+}
+
+.cancion-row button {
+  padding: 6px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cancion-row button:hover {
+  background-color: #c0392b;
+}
+
+button[type="button"] {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #27ae60;
+}
+
+.form-actions {
+  margin-top: 20px;
+  text-align: right;
+}

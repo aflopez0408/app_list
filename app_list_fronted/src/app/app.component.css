@@ -1,0 +1,29 @@
+button {
+  padding: 12px 20px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+button:nth-child(1) {
+  background-color: #4CAF50; /* verde */
+  color: white;
+}
+
+button:nth-child(2) {
+  background-color: #2196F3; /* azul */
+  color: white;
+}
+
+button:nth-child(3) {
+  background-color: #FFC107; /* amarillo */
+  color: black;
+}

@@ -21,7 +21,7 @@ export interface PlaylistDTO {
 })
 export class PlaylistService {
 
-  private apiUrl = 'http://localhost:8080/lists'; // CORREGIDO
+  private apiUrl = 'http://localhost:8080/lists'; 
 
   constructor(private http: HttpClient) {}
 

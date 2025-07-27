@@ -1,1 +1,21 @@
-<app-playlist-create></app-playlist-create>
+<div style="text-align: center; margin-top: 30px">
+  <h1>🎼 Gestor de Playlists</h1>
+
+  <div style="margin: 20px 0">
+    <button (click)="mostrar('crear')">🟢 Crear Lista</button>
+    <button (click)="mostrar('buscar')">🔵 Buscar Lista</button>
+    <button (click)="mostrar('listar')">🟡 Mostrar Todas</button>
+  </div>
+</div>
+
+<div *ngIf="vista === 'crear'" style="margin-top: 30px">
+  <app-playlist-create></app-playlist-create>
+</div>
+
+<div *ngIf="vista === 'buscar'" style="margin-top: 30px">
+  <app-playlist-search></app-playlist-search>
+</div>
+
+<div *ngIf="vista === 'listar'" style="margin-top: 30px">
+  <app-playlist-list></app-playlist-list>
+</div>

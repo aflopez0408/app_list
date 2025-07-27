@@ -1,19 +1,21 @@
 <h2>Crear nueva playlist</h2>
 
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <div>
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="playlist-form">
+  <div class="form-section">
     <label>Nombre:</label>
     <input formControlName="nombre" />
   </div>
 
-  <div>
+  <div class="form-section">
     <label>Descripción:</label>
     <input formControlName="descripcion" />
   </div>
 
+  <h3>Canciones</h3>
+
   <div formArrayName="canciones">
-    <h3>Canciones</h3>
     <div
+      class="cancion-row"
       *ngFor="let c of canciones.controls; let i = index"
       [formGroupName]="i"
     >
@@ -27,5 +29,7 @@
     <button type="button" (click)="agregarCancion()">Agregar canción</button>
   </div>
 
-  <button type="submit">Guardar</button>
+  <div class="form-actions">
+    <button type="submit">Guardar</button>
+  </div>
 </form>

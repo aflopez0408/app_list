@@ -1,0 +1,70 @@
+.search-form {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.search-form input {
+  padding: 6px;
+  flex: 1;
+  font-size: 14px;
+}
+
+.search-form button {
+  padding: 8px 16px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.search-form button:hover {
+  background-color: #2980b9;
+}
+
+.playlist-card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #fdfdfd;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.playlist-card h3 {
+  margin: 0;
+  color: #2c3e50;
+}
+
+.playlist-card p {
+  margin: 5px 0 10px;
+}
+
+.playlist-card ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.playlist-card li {
+  background: #f5f5f5;
+  margin-bottom: 6px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.playlist-card button {
+  margin-top: 10px;
+  padding: 6px 12px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.playlist-card button:hover {
+  background-color: #c0392b;
+}

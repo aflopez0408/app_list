@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common'; // ✅ IMPORTA ESTO
 import { PlaylistCreateComponent } from './components/playlist-create/playlist-create.component';
 import { PlaylistListComponent } from './components/playlist-list/playlist-list.component';
 import { PlaylistSearchComponent } from './components/playlist-search/playlist-search.component';
@@ -7,16 +8,22 @@ import { PlaylistSearchComponent } from './components/playlist-search/playlist-s
   selector: 'app-root',
   standalone: true,
   imports: [
-    PlaylistCreateComponent, 
+    CommonModule, 
+    PlaylistCreateComponent,
     PlaylistListComponent,
-   PlaylistSearchComponent],
-
-  template: `
-    <app-playlist-create></app-playlist-create>
-    <hr />
-    <app-playlist-list></app-playlist-list>
-    <hr />
-    <app-playlist-search></app-playlist-search>
-  `
+    PlaylistSearchComponent
+  ],
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent {}
+export class AppComponent {
+  vista: 'crear' | 'buscar' | 'listar' | null = null;
+
+  mostrar(v: 'crear' | 'buscar' | 'listar') {
+    this.vista = v;
+    console.log('Vista activa:', v);
+  }
+}
+
+
+

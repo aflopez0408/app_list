@@ -4,19 +4,16 @@
   <p>No hay playlists registradas.</p>
 </div>
 
-<div
-  *ngFor="let playlist of playlists"
-  style="border: 1px solid #ccc; margin-bottom: 1em; padding: 1em"
->
+<div *ngFor="let playlist of playlists" class="playlist-card">
   <h3>{{ playlist.nombre }}</h3>
   <p><strong>Descripción:</strong> {{ playlist.descripcion }}</p>
 
   <div *ngIf="playlist.canciones.length > 0">
     <h4>Canciones:</h4>
     <ul>
-      <li *ngFor="let cancion of playlist.canciones">
-        🎵 {{ cancion.titulo }} - {{ cancion.artista }} ({{ cancion.genero }},
-        {{ cancion.anno }})
+      <li *ngFor="let c of playlist.canciones">
+        🎵 <strong>{{ c.titulo }}</strong> - {{ c.artista }} ({{ c.album }},
+        {{ c.anno }}) - {{ c.genero }}
       </li>
     </ul>
   </div>
