@@ -32,5 +32,14 @@ public class PlaylistDTO {
     public void setCanciones(List<SongDTO> canciones) {
         this.canciones = canciones;
     }
+
+    @Override
+    public String toString() {
+        return "PlaylistDTO{" +
+                "descripcion='" + descripcion + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", canciones=" + canciones +
+                '}';
+    }
 }
 

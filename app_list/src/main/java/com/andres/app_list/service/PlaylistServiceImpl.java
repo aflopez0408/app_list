@@ -2,6 +2,7 @@ package com.andres.app_list.service;
 
 import com.andres.app_list.dto.PlaylistDTO;
 import com.andres.app_list.dto.SongDTO;
+import com.andres.app_list.exception.ExceptionBadRequest;
 import com.andres.app_list.exception.ResourceNotFoundException;
 import com.andres.app_list.model.Playlist;
 import com.andres.app_list.model.Song;
@@ -9,6 +10,7 @@ import com.andres.app_list.repository.PlaylistRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.io.Console;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -25,7 +27,10 @@ public class PlaylistServiceImpl implements PlaylistService {
 
     @Override
     public PlaylistDTO create(PlaylistDTO dto) {
-        // Mapear DTO → Entity
+
+        if (dto.getNombre() == null || dto.getNombre().isBlank()){
+            throw new ExceptionBadRequest("Nombre de Lista es Obligatorio");
+        }
         Playlist entity = new Playlist();
         entity.setNombre(dto.getNombre());
         entity.setDescripcion(dto.getDescripcion());
@@ -46,10 +51,10 @@ public class PlaylistServiceImpl implements PlaylistService {
             entity.setCanciones(songs);
         }
 
-        // Guardar
+
         Playlist saved = repo.save(entity);
 
-        // Mapear Entity → DTO
+
         PlaylistDTO out = new PlaylistDTO();
         out.setNombre(saved.getNombre());
         out.setDescripcion(saved.getDescripcion());
