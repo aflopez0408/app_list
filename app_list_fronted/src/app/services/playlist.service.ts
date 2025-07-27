@@ -32,6 +32,11 @@ export class PlaylistService {
   obtenerTodas(): Observable<PlaylistDTO[]> {
     return this.http.get<PlaylistDTO[]>(this.apiUrl);
   }
+
+  buscarPorNombre(nombre: string): Observable<PlaylistDTO> {
+  return this.http.get<PlaylistDTO>(`${this.apiUrl}/${nombre}`);
+  }
+
 }
 
 

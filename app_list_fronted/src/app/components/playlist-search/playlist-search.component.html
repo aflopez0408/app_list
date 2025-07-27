@@ -1,0 +1,25 @@
+<h2>🔍 Buscar playlist por nombre</h2>
+
+<input [(ngModel)]="nombre" placeholder="Nombre de la playlist" />
+<button (click)="buscar()">Buscar</button>
+
+<div *ngIf="error" style="color: red; margin-top: 10px">
+  {{ error }}
+</div>
+
+<div
+  *ngIf="resultado"
+  style="margin-top: 20px; border: 1px solid #ccc; padding: 1em"
+>
+  <h3>{{ resultado.nombre }}</h3>
+  <p><strong>Descripción:</strong> {{ resultado.descripcion }}</p>
+
+  <div *ngIf="resultado.canciones.length > 0">
+    <h4>Canciones:</h4>
+    <ul>
+      <li *ngFor="let c of resultado.canciones">
+        🎵 {{ c.titulo }} - {{ c.artista }} ({{ c.genero }}, {{ c.anno }})
+      </li>
+    </ul>
+  </div>
+</div>
