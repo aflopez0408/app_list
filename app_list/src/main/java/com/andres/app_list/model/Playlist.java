@@ -8,10 +8,10 @@ import java.util.Set;
 public class Playlist {
 
     @Id
-    @Column(name = "nombre", length = 100)
+    @Column(length = 100)
     private String nombre;
 
-    @Column(name = "descripcion", length = 255)
+    @Column(length = 255)
     private String descripcion;
 
     @OneToMany(
@@ -22,23 +22,31 @@ public class Playlist {
     )
     private Set<Song> canciones;
 
-
     public Playlist() {}
 
+    public String getNombre() {
+        return nombre;
+    }
 
-    public Playlist(String nombre, String descripcion) {
+    public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
 
+    public Set<Song> getCanciones() {
+        return canciones;
+    }
 
-    public String getNombre() { return nombre; }
-    public void setNombre(String nombre) { this.nombre = nombre; }
-
-    public String getDescripcion() { return descripcion; }
-    public void setDescripcion(String descripcion) { this.descripcion = descripcion; }
-
-    public Set<Song> getCanciones() { return canciones; }
-    public void setCanciones(Set<Song> canciones) { this.canciones = canciones; }
+    public void setCanciones(Set<Song> canciones) {
+        this.canciones = canciones;
+    }
 }
+
 
