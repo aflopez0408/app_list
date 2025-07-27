@@ -28,6 +28,10 @@ export class PlaylistService {
   crearPlaylist(data: PlaylistDTO): Observable<PlaylistDTO> {
     return this.http.post<PlaylistDTO>(this.apiUrl, data);
   }
+
+  obtenerTodas(): Observable<PlaylistDTO[]> {
+    return this.http.get<PlaylistDTO[]>(this.apiUrl);
+  }
 }
 
 
