@@ -54,9 +54,9 @@ export class PlaylistCreateComponent {
       this.form.reset();
       this.canciones.clear();
     },
-    error: (err: any) => { // ✅ Aquí es donde se corrige
+    error: (err: any) => { 
       alert('Error al crear la lista');
-      console.error(err);  // Esto ya lo tenías bien
+      console.error(err);  
     }
   });
 }

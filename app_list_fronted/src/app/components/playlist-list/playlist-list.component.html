@@ -5,7 +5,7 @@
 </div>
 
 <div *ngFor="let playlist of playlists" class="playlist-card">
-  <h3>{{ playlist.nombre }}</h3>
+  <h3><strong>Nombre: </strong> {{ playlist.nombre }}</h3>
   <p><strong>Descripción:</strong> {{ playlist.descripcion }}</p>
 
   <div *ngIf="playlist.canciones.length > 0">

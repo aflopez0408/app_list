@@ -1,8 +1,8 @@
-<h2>Crear nueva playlist</h2>
+<h2 class="titulo-seccion">🎶 Crear nueva playlist</h2>
 
 <form [formGroup]="form" (ngSubmit)="onSubmit()" class="playlist-form">
   <div class="form-section">
-    <label>Nombre:</label>
+    <label>Nombre de la lista de reproducción:</label>
     <input formControlName="nombre" />
   </div>
 
@@ -15,15 +15,17 @@
 
   <div formArrayName="canciones">
     <div
-      class="cancion-row"
+      class="cancion-box"
       *ngFor="let c of canciones.controls; let i = index"
       [formGroupName]="i"
     >
-      <input placeholder="Título" formControlName="titulo" />
-      <input placeholder="Artista" formControlName="artista" />
-      <input placeholder="Álbum" formControlName="album" />
-      <input placeholder="Año" formControlName="anno" type="number" />
-      <input placeholder="Género" formControlName="genero" />
+      <div class="row">
+        <input placeholder="Título" formControlName="titulo" />
+        <input placeholder="Artista" formControlName="artista" />
+        <input placeholder="Álbum" formControlName="album" />
+        <input placeholder="Año" formControlName="anno" type="number" />
+        <input placeholder="Género" formControlName="genero" />
+      </div>
       <button type="button" (click)="eliminarCancion(i)">Eliminar</button>
     </div>
     <button type="button" (click)="agregarCancion()">Agregar canción</button>

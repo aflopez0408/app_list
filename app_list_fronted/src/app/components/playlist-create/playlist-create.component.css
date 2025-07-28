@@ -82,3 +82,44 @@ button[type="submit"]:hover {
   margin-top: 20px;
   text-align: right;
 }
+
+.titulo-seccion {
+  font-size: 28px;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  border-left: 6px solid #3498db;
+  padding-left: 12px;
+  background: linear-gradient(to right, #ecf0f1, #ffffff);
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.cancion-box {
+  background-color: #fafafa;
+  border: 1px solid #ddd;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+}
+
+.cancion-box .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.cancion-box input {
+  flex: 1 1 180px;
+  padding: 6px 8px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
