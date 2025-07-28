@@ -15,7 +15,6 @@ Este proyecto es una API RESTful desarrollada con **Spring Boot** y un frontend 
 - Validaciones y manejo global de errores
 - Base de datos en memoria H2
 - Seguridad básica con Spring Security (HTTP Basic)
-- Documentación Swagger con SpringDoc OpenAPI
 - Separación en capas (`controller`, `service`, `repository`, `dto`, `exception`, `model`)
 - Test unitarios con JUnit y Mockito
 
@@ -104,6 +103,8 @@ GET	/lists	Listar todas las playlists
 GET	/lists/{nombre}	Buscar playlist por nombre
 DELETE	/lists/{nombre}	Eliminar playlist por nombre
 
+📄 Documentación de los servicios en Postman:
+https://documenter.getpostman.com/view/32979354/2sB3B7NDYR
 
 ✍️ Autor
 Desarrollado por Andrés López
