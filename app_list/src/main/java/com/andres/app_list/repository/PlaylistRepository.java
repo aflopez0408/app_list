@@ -7,3 +7,5 @@ import com.andres.app_list.model.Playlist;
 public interface PlaylistRepository extends JpaRepository<Playlist, String> {
 }
 
+
+

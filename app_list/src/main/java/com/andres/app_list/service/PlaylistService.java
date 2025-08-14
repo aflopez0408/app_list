@@ -12,5 +12,11 @@ public interface PlaylistService {
     PlaylistDTO findByName(String nombre);
 
     void delete(String nombre);
+
+    List<String> obtenerPlaylistsPorTituloCancion(String titulo);
+
+
+
+
 }
 

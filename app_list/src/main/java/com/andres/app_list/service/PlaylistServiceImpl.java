@@ -9,6 +9,7 @@ import com.andres.app_list.model.Song;
 import com.andres.app_list.repository.PlaylistRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import com.andres.app_list.repository.SongRepository;
 
 import java.io.Console;
 import java.util.List;
@@ -21,9 +22,14 @@ public class PlaylistServiceImpl implements PlaylistService {
 
     private final PlaylistRepository repo;
 
-    public PlaylistServiceImpl(PlaylistRepository repo) {
+    private final SongRepository repoSong;
+
+    public PlaylistServiceImpl(PlaylistRepository repo, SongRepository reposong) {
         this.repo = repo;
+        this.repoSong = reposong;
     }
+
+
 
     @Override
     public PlaylistDTO create(PlaylistDTO dto) {
@@ -136,6 +142,17 @@ public class PlaylistServiceImpl implements PlaylistService {
                 .orElseThrow(() -> new ResourceNotFoundException("Playlist no encontrada: " + nombre));
         repo.delete(p);
     }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<String>  obtenerPlaylistsPorTituloCancion(String titulo) {
+        return repoSong.findByTitulo(titulo)
+                .stream()
+                .map(song -> song.getPlaylist().getNombre())
+                .distinct()
+                .toList();
+    }
+
 }
 
 

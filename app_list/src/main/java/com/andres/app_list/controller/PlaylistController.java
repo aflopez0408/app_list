@@ -47,5 +47,11 @@ public class PlaylistController {
         playlistService.delete(nombre);
         return ResponseEntity.noContent().build();
     }
+
+    @GetMapping("/por-titulo-cancion")
+    public ResponseEntity<List<String>> obtenerPlaylistsPorTituloCancion(@RequestParam String titulo) {
+        List<String> nombres = playlistService.obtenerPlaylistsPorTituloCancion(titulo);
+        return ResponseEntity.ok(nombres);
+    }
 }
 
